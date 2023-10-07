@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: npm ci # or pnpm install / yarn install / bun install 
       - name: Install documentation dependencies
-        run: julia --project=docs -e 'using Pkg; pkg"dev ."; Pkg.instantiate()'
+        run: julia --project=docs -e 'using Pkg; pkg"add https://github.com/LuxDL/DocumenterVitepress.jl.git; dev ."; Pkg.instantiate()'
       - name: Build and deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # For authentication with GitHub Actions token
