@@ -27,7 +27,7 @@ jobs:
           cache-dependency-path: './docs/package.json'
       - uses: actions/configure-pages@v3
       - name: Install dependencies
-        run: npm ci # or pnpm install / yarn install / bun install 
+        run: npm add -D vitepress # or pnpm install / yarn install / bun install 
       - name: Install documentation dependencies
         run: julia --project=docs -e 'using Pkg; pkg"add https://github.com/LuxDL/DocumenterVitepress.jl.git; dev ."; Pkg.instantiate()'
       - name: Build and deploy
