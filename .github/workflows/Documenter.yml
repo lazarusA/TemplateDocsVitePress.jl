@@ -16,6 +16,7 @@ jobs:
     permissions:
       contents: write
       id-token: write
+      pages: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -52,6 +53,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
+    permissions:
+      contents: write
+      id-token: write
+      pages: write
     runs-on: ubuntu-latest
     name: Deploy
     steps:
