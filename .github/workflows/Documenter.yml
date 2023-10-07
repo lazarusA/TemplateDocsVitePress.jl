@@ -40,26 +40,3 @@ jobs:
           DATADEPS_ALWAYS_ACCEPT: true
         run: |
           julia --project=docs/ --color=yes docs/make.jl
-          npm run docs:build --prefix docs # or pnpm docs:build / yarn docs:build / bun run docs:build
-          touch docs/docs/.vitepress/dist/.nojekyll
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: docs/docs/.vitepress/dist
-
-    # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    permissions:
-      contents: write
-      id-token: write
-      pages: write
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-       - name: Deploy to GitHub Pages
-         id: deployment
-         uses: actions/deploy-pages@v2
