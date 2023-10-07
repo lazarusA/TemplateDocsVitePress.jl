@@ -8,5 +8,5 @@ makedocs(; sitename="TemplateDocsVitepress", authors="Lazaro Alonso",
     draft=false,
     source="src", build=joinpath(@__DIR__, "docs"))
 
-deploydocs(; repo="github.com/lazarusA/TemplateDocsVitepress.jl.git", push_preview=true,
+deploydocs(; repo="github.com/lazarusA/TemplateDocsVitePress.jl.git", push_preview=true,
     make=() -> run(`npm run docs:build`), target="site", devbranch="master")
