@@ -39,7 +39,7 @@ export default {
 ```md
 ::: info
 
-This is an info box.
+This is an info box!
 
 :::
 
