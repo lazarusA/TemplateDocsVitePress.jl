@@ -14,7 +14,7 @@ concurrency:
 jobs:
   build:
     permissions:
-      contents: write
+      contents: read
       id-token: write
       pages: write
     runs-on: ubuntu-latest
