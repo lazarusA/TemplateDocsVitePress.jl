@@ -1,7 +1,7 @@
 using Documenter
 using DocumenterVitepress
 
-cp(joinpath(@__DIR__,"deploy"), joinpath(@__DIR__,"docs/"), force=true)
+#cp(joinpath(@__DIR__,"deploy"), joinpath(@__DIR__,"docs/"), force=true)
 
 makedocs(; sitename="TemplateDocsVitepress", authors="Lazaro Alonso",
     modules=[DocumenterVitepress],
