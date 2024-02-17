@@ -14,5 +14,4 @@ makedocs(; sitename="TemplateDocsVitePress", authors="Lazaro Alonso",
 deploydocs(; repo="github.com/lazarusA/TemplateDocsVitePress.git",
     target="docs_site",
     branch = "gh-pages",
-    versions = nothing,
     devbranch="master")
