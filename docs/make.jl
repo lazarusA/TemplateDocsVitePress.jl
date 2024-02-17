@@ -24,6 +24,12 @@ deploy_decision = Documenter.deploy_folder(
     push_preview=true,
 )
 
+# VitePress relies on its config file in order to understand where files will exist.
+# We need to modify this file to reflect the correct base URL, however, Documenter
+# only knows about the base URL at the time of deployment.
+
+# So, after building the Markdown, we need to modify the config file to reflect the
+# correct base URL, and then build the VitePress site.
 folder = deploy_decision.subfolder
 println("Deploying to $folder")
 vitepress_config_file = joinpath(@__DIR__, "build", ".vitepress", "config.mts")
@@ -41,5 +47,6 @@ deploydocs(;
     repo="lazarusA/TemplateDocsVitePress",
     target="build/.vitepress/dist", # this is where Vitepress stores its output
     branch = "gh-pages",
-    devbranch="master"
+    devbranch="master",
+    push_preview = true
 )
