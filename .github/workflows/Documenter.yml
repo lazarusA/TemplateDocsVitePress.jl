@@ -35,7 +35,7 @@ jobs:
         with:
             node-version: 20
             cache: npm # or pnpm / yarn
-            cache-dependency-path: 'package-lock.json' # this should be a package-lock.json file
+            cache-dependency-path: 'docs/package-lock.json' # this should be a package-lock.json file
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1
       - name: Pull Julia cache
