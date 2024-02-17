@@ -18,7 +18,7 @@ makedocs(; sitename="TemplateDocsVitePress", authors="Lazaro Alonso",
 deploy_config = Documenter.auto_detect_deploy_system()
 deploy_decision = Documenter.deploy_folder(
     deploy_config;
-    repo="github.com/lazarusa/TemplateDocsVitePress",
+    repo="lazarusa/TemplateDocsVitePress",
     devbranch="master",
     devurl = "dev",
     push_preview=true,
@@ -37,7 +37,9 @@ cd(@__DIR__) do
 end
 touch(joinpath(@__DIR__, "build", ".vitepress", "dist", ".nojekyll"))
 
-deploydocs(; repo="github.com/lazarusA/TemplateDocsVitePress.git",
+deploydocs(; 
+    repo="lazarusa/TemplateDocsVitePress",
     target="build/.vitepress/dist", # this is where Vitepress stores its output
     branch = "gh-pages",
-    devbranch="master")
+    devbranch="master"
+)
