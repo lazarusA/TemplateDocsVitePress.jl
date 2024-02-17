@@ -30,12 +30,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Julia version
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+            node-version: 20
+            cache: npm # or pnpm / yarn
+            cache-dependency-path: 'package-lock.json' # this should be a package-lock.json file
+      - name: Setup Julia
         uses: julia-actions/setup-julia@v1
-      - name: Julia cache
+      - name: Pull Julia cache
         uses: julia-actions/cache@v1
-      - name: Install documentation dependencies
+      - name: Install custom documentation dependencies
         run: julia --project=docs -e 'using Pkg; pkg"dev ."; pkg"add https://github.com/LuxDL/DocumenterVitepress.jl.git"; Pkg.instantiate(); Pkg.precompile(); Pkg.status()'
+      - name: Instantiate NPM
+        run: cd docs/; npm i; cd ..
       #- name: Creating new mds from src
       - name: Build and deploy
         env:
@@ -44,4 +52,4 @@ jobs:
           JULIA_DEBUG: "Documenter"
           DATADEPS_ALWAYS_ACCEPT: true
         run: |
-          julia --project=docs/ --color=yes docs/make.jl
+          julia --project=docs/ --color=yes docs/make.jl # this should ideally AUTO-DEPLOY!
