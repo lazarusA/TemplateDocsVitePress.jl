@@ -37,7 +37,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Install documentation dependencies
-        run: julia --project=docs -e 'using Pkg; pkg"dev ."; pkg"add https://github.com/LuxDL/DocumenterVitepress.jl.git"; Pkg.instantiate()'
+        run: julia --project=docs -e 'using Pkg; pkg"dev ."; pkg"add https://github.com/LuxDL/DocumenterVitepress.jl.git"; Pkg.instantiate(); Pkg.precompile(); Pkg.status()'
       #- name: Creating new mds from src
       - name: make md pages content
         run: julia --project=docs/ --color=yes docs/make.jl

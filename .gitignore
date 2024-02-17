@@ -2,3 +2,7 @@ Manifest.toml
 .vscode
 node_modules
 docs/src/.vitepress/cache
+docs/docs_site/docs/
+docs/docs_site/docs/.vitepress/cache
+docs/docs_site/docs/.vitepress/dist
+.DS_Store
