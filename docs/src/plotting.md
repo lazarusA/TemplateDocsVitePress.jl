@@ -35,7 +35,7 @@ fig
 
 ## WGLMakie and Bonito
 
-````@example bonito
+````julia
 using WGLMakie
 using Bonito, Markdown
 Page(exportable=true, offline=true)
