@@ -2,4 +2,3 @@ Manifest.toml
 .vscode
 node_modules
 docs/src/.vitepress/cache
-docs/docs_site
