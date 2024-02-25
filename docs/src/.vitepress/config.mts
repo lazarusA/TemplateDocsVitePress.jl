@@ -37,6 +37,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Literate', link: '/literate/example' },
       { text: 'Examples', link: '/markdown-examples' }
     ],
 
