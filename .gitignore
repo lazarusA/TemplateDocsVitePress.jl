@@ -1,9 +1,12 @@
 Manifest.toml
 .vscode
+.DS_Store
 node_modules
-docs/src/.vitepress/cache
+bonito
 docs/build
 .DS_Store
+docs/src/.vitepress/cache
+docs/src/.vitepress/dist
 docs/Manifest.toml
 docs/.vscode
 docs/node_modules

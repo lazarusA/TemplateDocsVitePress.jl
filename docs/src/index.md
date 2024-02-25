@@ -7,6 +7,9 @@ hero:
   name: "TemplateDocs\nVitePress"
   text: "Easy start"
   tagline: This is the start of a new journey
+  image:
+    src: /logo.png
+    alt: TemplateDocsVitepress
   actions:
     - theme: brand
       text: Markdown Examples
