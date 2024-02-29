@@ -37,15 +37,17 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Markdown', link: '/markdown-examples' },
       { text: 'Literate', link: '/literate/example' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Plotting', link: '/plotting' },
     ],
 
     sidebar: [
       {
         text: 'Examples',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Markdown', link: '/markdown-examples' },
+          { text: 'Literate', link: '/literate/example' },
           { text: 'Plotting', link: '/plotting' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]

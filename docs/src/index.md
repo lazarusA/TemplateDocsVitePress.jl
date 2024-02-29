@@ -19,11 +19,14 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Markdown
+    details: Write plain markdown files
+    link: /markdown-examples
+  - title: Literate.jl
+    details: Or use Literate to generate md files from jl ones.
+    link: /literate/example
+  - title: Plotting
+    details: Do plots with Makie.jl
+    link: /plotting
 ---
 ```
