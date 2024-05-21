@@ -11,7 +11,7 @@ scatter(1:4, color=1:4)
 
 Another:
 
-```@example wglmakie
+````@example wglmakie
 N = 60
 function xy_data(x, y)
     r = sqrt(x^2 + y^2)
@@ -23,4 +23,15 @@ surface(
     -1..1, -1..1, z,
     colormap = :Spectral
 )
-```
+````
+
+do also inline `Page(exportable=true, offline=true)`.
+
+````@example wglmakie
+using WGLMakie
+using Bonito, Markdown
+Page(exportable=true, offline=true)
+WGLMakie.activate!()
+Makie.inline!(true) # Make sure to inline plots into Documenter output!
+scatter(1:4, color=1:4)
+````
