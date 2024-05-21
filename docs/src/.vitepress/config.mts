@@ -40,6 +40,7 @@ export default defineConfig({
       { text: 'Markdown', link: '/markdown-examples' },
       { text: 'Literate', link: '/literate/example' },
       { text: 'Plotting', link: '/plotting' },
+      { text: 'Bonito', link: '/bonito' },
     ],
 
     sidebar: [
@@ -49,6 +50,7 @@ export default defineConfig({
           { text: 'Markdown', link: '/markdown-examples' },
           { text: 'Literate', link: '/literate/example' },
           { text: 'Plotting', link: '/plotting' },
+          { text: 'Bonito', link: '/bonito' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       }
