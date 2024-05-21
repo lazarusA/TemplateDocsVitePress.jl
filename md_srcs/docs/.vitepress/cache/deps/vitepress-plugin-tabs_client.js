@@ -1,11 +1,11 @@
 import {
   reactive,
   watch
-} from "./chunk-KGHB62SH.js";
+} from "./chunk-RY5ODQAQ.js";
 
 // node_modules/vitepress-plugin-tabs/src/client/index.ts
-import PluginTabs from "/Users/lalonso/Documents/TemplateDocsVitePress.jl/docs/node_modules/vitepress-plugin-tabs/src/client/PluginTabs.vue";
-import PluginTabsTab from "/Users/lalonso/Documents/TemplateDocsVitePress.jl/docs/node_modules/vitepress-plugin-tabs/src/client/PluginTabsTab.vue";
+import PluginTabs from "/Users/lalonso/Documents/TemplateDocsVitePress.jl/md_srcs/node_modules/vitepress-plugin-tabs/src/client/PluginTabs.vue";
+import PluginTabsTab from "/Users/lalonso/Documents/TemplateDocsVitePress.jl/md_srcs/node_modules/vitepress-plugin-tabs/src/client/PluginTabsTab.vue";
 
 // node_modules/vitepress-plugin-tabs/src/client/useTabsSelectedState.ts
 var injectionKey = "vitepress:tabSharedState";
