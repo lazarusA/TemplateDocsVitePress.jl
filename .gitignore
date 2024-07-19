@@ -13,4 +13,5 @@ docs/node_modules
 docs/.vitepress/cache
 docs/.vitepress/dist
 docs/.DS_Store
+docs/dev
 package-lock.json
