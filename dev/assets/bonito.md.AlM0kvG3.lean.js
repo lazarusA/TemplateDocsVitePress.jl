@@ -1,0 +1,1 @@
+import{_ as i,c as s,o as a,a6 as t}from"./chunks/framework.AO7iV9r0.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"bonito.md","filePath":"bonito.md","lastUpdated":null}'),n={name:"bonito.md"},l=t("",2),e=[l];function h(k,p,d,r,o,c){return a(),s("div",null,e)}const y=i(n,[["render",h]]);export{g as __pageData,y as default};
