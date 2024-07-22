@@ -6,8 +6,11 @@ using OhMyCards
 
 examples = [
     "test1.jl",
-    "test2.jl"
+    "test2.jl",
+    "test3.jl",
+    "test4.jl",
     ]
+    
 example_dir = joinpath(dirname(@__DIR__), "examples")
 mkpath(example_dir)
 

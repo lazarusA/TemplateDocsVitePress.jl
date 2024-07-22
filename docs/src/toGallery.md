@@ -11,4 +11,6 @@ This page is a gallery of various examples.
 ```@overviewgallery
 test1
 test2
+test3
+test4
 ```
