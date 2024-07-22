@@ -37,6 +37,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Gallery', link: '/toGallery' },
       { text: 'Markdown', link: '/markdown-examples' },
       { text: 'Literate', link: '/literate/example' },
       { text: 'Plotting', link: '/plotting' },
