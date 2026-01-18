@@ -11,7 +11,9 @@ makedocs(
     modules  = [TemplateDocsVitePress],
     checkdocs = :all,
     warnonly  = true,
-
+    pages = [
+        "Home" => "index.md",
+    ],
     format = DocumenterVitepress.MarkdownVitepress(
         repo      = "github.com/lazarusA/TemplateDocsVitePress.jl.git",
         devbranch = "master",
