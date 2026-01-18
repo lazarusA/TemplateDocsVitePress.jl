@@ -18,7 +18,7 @@ makedocs(
         repo      = "github.com/lazarusA/TemplateDocsVitePress.jl.git",
         devbranch = "master",
         devurl    = "dev",
-        deploy_url = "https://lazarusA.github.io/DeployTemplateDocs/"
+        deploy_url = "./DeployTemplateDocs/"
     ),
 )
 
