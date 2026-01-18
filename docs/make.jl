@@ -2,23 +2,37 @@ using Documenter
 using DocumenterVitepress
 using TemplateDocsVitePress
 
+# ------------------
+# Build documentation
+# ------------------
+makedocs(
+    sitename = "TemplateDocsVitePress",
+    authors  = "Lazaro Alonso",
+    modules  = [TemplateDocsVitePress],
+    checkdocs = :all,
+    warnonly  = true,
 
-makedocs(; sitename="TemplateDocsVitePress", authors="Lazaro Alonso",
-    modules=[TemplateDocsVitePress],
-    checkdocs=:all,
-    format=DocumenterVitepress.MarkdownVitepress(
-        repo = "https://github.com/lazarusA/TemplateDocsVitePress",
+    format = DocumenterVitepress.MarkdownVitepress(
+        repo      = "github.com/lazarusA/TemplateDocsVitePress.jl.git",
         devbranch = "master",
-        devurl = "dev";
+        devurl    = "dev",
     ),
-    warnonly = true,
-    )
+)
 
-deploydocs(; 
-    repo="github.com/lazarusA/DeployTemplateDocs.git",
-    deploy_repo="https://github.com/lazarusA/DeployTemplateDocs",
-    target="build",
-    branch = "gh-pages",
-    devbranch="master",
-    push_preview = true
+# ------------------
+# Deploy documentation
+# ------------------
+DocumenterVitepress.deploydocs(
+    # SOURCE repo (must match ENV["GITHUB_REPOSITORY"] for previews)
+    repo = "github.com/lazarusA/TemplateDocsVitePress.jl.git",
+
+    # TARGET repo for published docs (cross-repo is allowed)
+    deploy_repo = "github.com/lazarusA/DeployTemplateDocs.git",
+
+    target    = "build",
+    branch    = "gh-pages",
+    devbranch = "master",
+
+    # Enable PR previews
+    push_preview = true,
 )
