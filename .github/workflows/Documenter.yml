@@ -3,8 +3,8 @@
 name: Documenter
 
 on:
-  # Runs on pushes targeting the `main` branch. Change this to `master` if you're
-  # using the `master` branch as the default branch.
+  # Runs on pushes targeting the `master` branch. Change this to `main` if you're
+  # using the `main` branch as the default branch.
   push:
     branches:
       - master
@@ -33,30 +33,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-            node-version: 20
-            cache: npm # or pnpm / yarn
-            cache-dependency-path: 'docs/package-lock.json' # this should be a package-lock.json file
+        uses: actions/checkout@v6
       - name: Setup Julia
-        uses: julia-actions/setup-julia@v1
-      - name: Pull Julia cache
-        uses: julia-actions/cache@v1
-      - name: Install documentation dependencies
-        run: sudo apt-get update && sudo apt-get install -y xorg-dev mesa-utils xvfb libgl1 freeglut3-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libxext-dev libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
-      - name: Install custom documentation dependencies
-        run: DISPLAY=:0 xvfb-run -s '-screen 0 1024x768x24' julia --project=docs -e 'using Pkg; pkg"dev ."; pkg"add https://github.com/asinghvi17/OhMyCards.jl.git"; Pkg.instantiate(); Pkg.precompile(); Pkg.status()'
-      - name: Instantiate NPM
-        run: cd docs/; npm i; cd ..
-      #- name: Creating new mds from src
-      - name: Build and deploy
+        uses: julia-actions/setup-julia@v2
+      - name: Load Julia packages from cache
+        id: julia-cache
+        uses: julia-actions/cache@v2
+      - name: Build and deploy docs
+        uses: julia-actions/julia-docdeploy@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # For authentication with GitHub Actions token
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }} # For authentication with SSH deploy key
-          GKSwstype: "100"
           JULIA_DEBUG: "Documenter"
-          DATADEPS_ALWAYS_ACCEPT: true
-        run: |
-          DISPLAY=:0 xvfb-run -s '-screen 0 1024x768x24' julia --project=docs/ --color=yes docs/make.jl
+      - name: Save Julia depot cache on cancel or failure
+        id: julia-cache-save
+        if: cancelled() || failure()
+        uses: actions/cache/save@v5
+        with:
+          path: |
+            ${{ steps.julia-cache.outputs.cache-paths }}
+          key: ${{ steps.julia-cache.outputs.cache-key }}

@@ -1,45 +1,40 @@
 using Documenter
 using DocumenterVitepress
 using TemplateDocsVitePress
-using Literate
-using OhMyCards
 
-examples = [
-    "test1.jl",
-    "test2.jl",
-    "test3.jl",
-    "test4.jl",
-    ]
-    
-example_dir = joinpath(dirname(@__DIR__), "examples")
-mkpath(example_dir)
-
-for filename in examples
-    file = joinpath(example_dir, filename)
-    endswith(file, ".jl") || continue
-    Literate.markdown(file, joinpath(@__DIR__, "src", "examples", first(splitdir(filename))); documenter = true)
-end
-
-
-makedocs(; sitename="TemplateDocsVitePress", authors="Lazaro Alonso",
-    modules=[TemplateDocsVitePress],
-    checkdocs=:all,
-    format=DocumenterVitepress.MarkdownVitepress(
-        repo = "github.com/lazarusA/TemplateDocsVitePress.jl", # this must be the full URL!
+# ------------------
+# Build documentation
+# ------------------
+makedocs(
+    sitename = "TemplateDocsVitePress",
+    authors  = "Lazaro Alonso",
+    modules  = [TemplateDocsVitePress],
+    checkdocs = :all,
+    warnonly  = true,
+    pages = [
+        "Home" => "index.md",
+    ],
+    format = DocumenterVitepress.MarkdownVitepress(
+        repo      = "github.com/lazarusA/TemplateDocsVitePress.jl.git",
         devbranch = "master",
-        devurl = "dev";
+        devurl    = "dev",
     ),
-    draft=false,
-    source="src", 
-    build= "build", 
-    warnonly = true,
-    plugins = [OhMyCards.ExampleConfig(),],
-    )
+)
 
-deploydocs(; 
-    repo="lazarusA/TemplateDocsVitePress.jl",
-    target="build", # this is where Vitepress stores its output
-    branch = "gh-pages",
-    devbranch="master",
-    push_preview = true
+# ------------------
+# Deploy documentation
+# ------------------
+DocumenterVitepress.deploydocs(
+    # SOURCE repo (must match ENV["GITHUB_REPOSITORY"] for previews)
+    repo = "github.com/lazarusA/TemplateDocsVitePress.jl.git",
+
+    # TARGET repo for published docs (cross-repo is allowed)
+    deploy_repo = "github.com/lazarusA/DeployTemplateDocs.git",
+
+    target    = "build",
+    branch    = "gh-pages",
+    devbranch = "master",
+
+    # Enable PR previews
+    push_preview = true,
 )
