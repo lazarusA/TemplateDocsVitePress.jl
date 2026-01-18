@@ -25,7 +25,7 @@ makedocs(; sitename="TemplateDocsVitePress", authors="Lazaro Alonso",
     modules=[TemplateDocsVitePress],
     checkdocs=:all,
     format=DocumenterVitepress.MarkdownVitepress(
-        repo = "github.com/lazarusA/TemplateDocsVitePress.jl", # this must be the full URL!
+        repo = "https://github.com/lazarusA/DeployTemplateDocs",
         devbranch = "master",
         devurl = "dev";
     ),
@@ -38,6 +38,7 @@ makedocs(; sitename="TemplateDocsVitePress", authors="Lazaro Alonso",
 
 deploydocs(; 
     repo="lazarusA/TemplateDocsVitePress.jl",
+    deploy_repo="https://github.com/lazarusA/DeployTemplateDocs",
     target="build", # this is where Vitepress stores its output
     branch = "gh-pages",
     devbranch="master",
