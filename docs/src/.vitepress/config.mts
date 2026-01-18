@@ -37,24 +37,6 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Gallery', link: '/toGallery' },
-      { text: 'Markdown', link: '/markdown-examples' },
-      { text: 'Literate', link: '/literate/example' },
-      { text: 'Plotting', link: '/plotting' },
-      { text: 'Bonito', link: '/bonito' },
-    ],
-
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown', link: '/markdown-examples' },
-          { text: 'Literate', link: '/literate/example' },
-          { text: 'Plotting', link: '/plotting' },
-          { text: 'Bonito', link: '/bonito' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
     ],
     editLink: {
       pattern: 'https://github.com/lazarusA/TemplateDocsVitePress.jl/edit/master/docs/src/:path'
