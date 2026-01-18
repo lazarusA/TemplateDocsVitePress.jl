@@ -37,7 +37,7 @@ makedocs(; sitename="TemplateDocsVitePress", authors="Lazaro Alonso",
     )
 
 deploydocs(; 
-    repo="lazarusA/TemplateDocsVitePress.jl",
+    repo="github.com/lazarusA/DeployTemplateDocs.git",
     deploy_repo="https://github.com/lazarusA/DeployTemplateDocs",
     target="build", # this is where Vitepress stores its output
     branch = "gh-pages",
