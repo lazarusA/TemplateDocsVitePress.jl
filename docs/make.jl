@@ -1,6 +1,13 @@
-using Documenter
-using DocumenterVitepress
-using TemplateDocsVitePress
+using Distributed
+Distributed.addprocs(2)
+
+@everywhere begin
+    using Documenter
+    using DocumenterVitepress
+    using TemplateDocsVitePress
+end
+
+Distributed.rmprocs()
 
 # ------------------
 # Build documentation
