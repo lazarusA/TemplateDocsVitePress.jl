@@ -44,7 +44,7 @@ jobs:
             const marker = "<!-- documenter-preview-comment -->";
             const body = [
               marker,
-              "## 📚 Documentation preview 🚀",
+              "### 📚 Documentation preview 🚀",
               "",
               `**Preview URL:** [${previewUrl}](${previewUrl})`,
               "",
